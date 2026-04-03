@@ -1,0 +1,1 @@
+"""Doodle Dice prototype package."""
