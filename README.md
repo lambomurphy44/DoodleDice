@@ -1,35 +1,28 @@
-# Doodle Dice (Playable Web Prototype)
+# Doodle Dice Prototype
 
-This repository now contains a **playable browser game prototype** for the Doodle Dice roguelite dicebuilder concept.
+A lightweight CLI prototype for **Doodle Dice** (aka **Scribble Siege** in early naming), a roguelite dice-builder with a notebook-sketch vibe.
 
-## Implemented
+## What's in this repo
 
-- Notebook-style UI with doodle-themed visuals.
-- Full 3-floor run with **9 combats** (including elites and final boss).
-- Core combat loop:
-  - roll **5d6** each turn
-  - up to **2 rerolls**
-  - spend dice on abilities
-  - enemy intents execute on end turn
-- Starting abilities + unlockable abilities.
-- Reward flow after each encounter (**2 learn options + 1 upgrade option**).
-- Victory/defeat overlays and restart flow.
+- `doodle_dice/content.py`: game content (abilities, enemies, encounters) encoded as data.
+- `doodle_dice/engine.py`: minimal combat engine for turns, dice, and enemy intents.
+- `doodle_dice/sim.py`: non-interactive run simulator that plays all 9 prototype combats.
+- `run.py`: entry point.
+
+## Prototype assumptions implemented
+
+- 5d6 per player turn
+- 2 rerolls per turn (AI rerolls low-value leftovers)
+- 3 floors / 9 combats
+- post-combat reward choice simulation (2 abilities + 1 upgrade option)
+- no relics, no shops, no map branching
 
 ## Run
 
-Because this is a static front-end app, serve it with any simple local HTTP server from repo root:
-
 ```bash
-python3 -m http.server 8000
+python3 run.py
 ```
 
-Then open:
+## Notes
 
-- `http://localhost:8000`
-
-## Files
-
-- `index.html` — game layout and UI shell
-- `styles.css` — notebook/sketch visual style
-- `app.js` — game data, combat rules, run progression, and rendering logic
-
+This code is intentionally compact and data-driven so it can be turned into a real game loop/UI later.
