@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doodle Dice</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="paper">
+      <header class="topbar sketch">
+        <h1>Doodle Dice</h1>
+        <div id="runStatus">Floor 1 · Fight 1/9</div>
+      </header>
+
+      <section class="layout">
+        <aside class="panel sketch" id="playerPanel"></aside>
+
+        <section class="panel sketch" id="battlePanel">
+          <div id="enemyRow" class="enemy-row"></div>
+          <div id="intentRow" class="intent-row"></div>
+          <div class="turn-controls">
+            <button id="rollBtn">Roll Turn</button>
+            <button id="rerollBtn">Reroll Selected</button>
+            <button id="endTurnBtn">End Turn</button>
+            <span id="rerollsLabel"></span>
+          </div>
+          <div id="diceRow" class="dice-row"></div>
+          <h3>Abilities</h3>
+          <div id="abilityRow" class="ability-row"></div>
+        </section>
+
+        <aside class="panel sketch" id="logPanel">
+          <h3>Notebook Notes</h3>
+          <div id="log"></div>
+        </aside>
+      </section>
+
+      <section id="overlay" class="overlay hidden"></section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
